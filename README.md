@@ -1,69 +1,112 @@
-# React + TypeScript + Vite
+# NPM Registry Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight web application for exploring every package published to the npm registry.
 
-Currently, two official plugins are available:
+Built with **React 19**, **TypeScript**, **Vite**, **React Router 7**, and **Tailwind CSS 4**; this project lets you quickly search for any package, inspect its details, and copy installation commands – all from a clean, responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot of NPM Registry Explorer](./docs/screenshot.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚡️ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔍 **Instant Search** – query the npm registry in real-time and display the first 20 matching results.
+- 📦 **Package Details** – versions, description, author, license, dependencies, maintainers, links to repository & homepage, and more.
+- ⏱️ **Recent Versions Timeline** – quick glance at the latest releases.
+- 🌗 **Responsive UI** – mobile-first design powered by Tailwind CSS.
+- 🔗 **Deep Linking** – shareable URLs for both search results and individual packages (React Router).
+- ⚙️ **Type-Safe Code** – written entirely in TypeScript with ESLint rules enabled.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📚 Tech Stack
+
+| Category        | Choice                                             |
+| --------------- | --------------------------------------------------- |
+| Framework       | [React 19](https://react.dev/)                     |
+| Bundler         | [Vite 7](https://vitejs.dev/)                      |
+| Language        | TypeScript 5                                       |
+| Styling         | [Tailwind CSS 4](https://tailwindcss.com/)         |
+| Routing         | [React Router 7](https://reactrouter.com/)         |
+| Icons           | [React Icons](https://react-icons.github.io/)      |
+| Linting / Types | ESLint, `@typescript-eslint`, `@types/*`           |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* **Node.js** ≥ 18
+* **pnpm**, **yarn**, or **npm** (examples use npm)
+
+### Installation
+
+```bash
+# clone the repository
+$ git clone https://github.com/<your-username>/npm-registry-explorer.git
+$ cd npm-registry-explorer
+
+# install dependencies
+$ npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+$ npm run dev
 ```
+The app will be available at `http://localhost:5173` by default and supports hot module replacement.
+
+### Production Build
+
+```bash
+$ npm run build
+```
+The output static files will be generated in the `dist/` directory.
+
+### Preview Production Build Locally
+
+```bash
+$ npm run preview
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
+├── public/            # Static assets copied as-is
+├── src/
+│   ├── components/    # Re-usable presentational components
+│   ├── pages/         # Route components (Home, Search, Details, Root)
+│   ├── index.css      # Tailwind directives & global styles
+│   ├── App.tsx        # Router configuration & root component
+│   └── main.tsx       # Entry point – React + Tailwind initialisation
+└── ...
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch: `git checkout -b feat/amazing-feature`
+3. Commit your changes: `git commit -m "feat: add amazing feature"`
+4. Push to the branch: `git push origin feat/amazing-feature`
+5. Open a pull request
+
+Please make sure any code changes are covered by appropriate tests (if applicable) and follow the existing coding style.
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
+
+---
+
+## 🙏 Acknowledgements
+
+- [npm Registry](https://registry.npmjs.org/) API
+- [Font Awesome](https://fontawesome.com/) via React Icons

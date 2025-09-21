@@ -1,7 +1,15 @@
 {
-  "name": "my-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "npm-registry-explorer",
+  "description": "A React + TypeScript web app for searching and inspecting npm packages.",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BarbodSmT/npm-registry-explorer.git"
+  },
+  "author": "Barbod Samadi Nia <smtbarbod@yahoo.com>",
+  "keywords": ["react", "vite", "typescript", "npm", "registry", "explorer", "tailwind", "search"],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +18,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "react-router": "^7.9.1",
     "react-router-dom": "^7.9.1",
